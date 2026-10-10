@@ -1,0 +1,20 @@
+config {
+  type: "declaration",
+  database: dataform.projectConfig.defaultDatabase,
+  schema: dataform.projectConfig.vars.rawDataset,
+  name: "staff",
+  description: "スタッフ",
+  columns: {
+    staff_id: "スタッフID",
+    first_name: "名",
+    last_name: "姓",
+    address_id: "住所ID",
+    picture: "写真",
+    email: "メールアドレス",
+    store_id: "所属店舗ID",
+    active: "有効状態",
+    username: "ユーザー名",
+    password: "パスワードハッシュ",
+    last_update: "最終更新日時",
+  }
+}

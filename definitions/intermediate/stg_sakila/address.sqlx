@@ -1,0 +1,29 @@
+config {
+  type: "view",
+  database: dataform.projectConfig.defaultDatabase,
+  schema: dataform.projectConfig.vars.stagingDataset,
+  name: "address",
+  description: "住所",
+  columns: {
+    address_id: "住所ID",
+    address: "住所",
+    address2: "住所の補足",
+    district: "地域",
+    city_id: "都市ID",
+    postal_code: "郵便番号",
+    phone: "電話番号",
+    last_update: "最終更新日時",
+  }
+}
+
+-- raw の列を選択し、staging ビューとして公開する。
+SELECT
+  address_id,
+  address,
+  address2,
+  district,
+  city_id,
+  postal_code,
+  phone,
+  last_update
+FROM ${ref(dataform.projectConfig.vars.rawDataset, "address")}

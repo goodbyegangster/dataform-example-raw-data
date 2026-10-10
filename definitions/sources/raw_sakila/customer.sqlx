@@ -1,0 +1,18 @@
+config {
+  type: "declaration",
+  database: dataform.projectConfig.defaultDatabase,
+  schema: dataform.projectConfig.vars.rawDataset,
+  name: "customer",
+  description: "顧客",
+  columns: {
+    customer_id: "顧客ID",
+    store_id: "店舗ID",
+    first_name: "名",
+    last_name: "姓",
+    email: "メールアドレス",
+    address_id: "住所ID",
+    active: "有効状態",
+    create_date: "登録日",
+    last_update: "最終更新日時",
+  }
+}

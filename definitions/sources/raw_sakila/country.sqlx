@@ -1,0 +1,12 @@
+config {
+  type: "declaration",
+  database: dataform.projectConfig.defaultDatabase,
+  schema: dataform.projectConfig.vars.rawDataset,
+  name: "country",
+  description: "国",
+  columns: {
+    country_id: "国ID",
+    country: "国名",
+    last_update: "最終更新日時",
+  }
+}

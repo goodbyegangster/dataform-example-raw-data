@@ -1,0 +1,21 @@
+config {
+  type: "view",
+  database: dataform.projectConfig.defaultDatabase,
+  schema: dataform.projectConfig.vars.stagingDataset,
+  name: "actor",
+  description: "出演者",
+  columns: {
+    actor_id: "出演者ID",
+    first_name: "名",
+    last_name: "姓",
+    last_update: "最終更新日時",
+  }
+}
+
+-- raw の列を選択し、staging ビューとして公開する。
+SELECT
+  actor_id,
+  first_name,
+  last_name,
+  last_update
+FROM ${ref(dataform.projectConfig.vars.rawDataset, "actor")}

@@ -1,0 +1,12 @@
+config {
+  type: "declaration",
+  database: dataform.projectConfig.defaultDatabase,
+  schema: dataform.projectConfig.vars.rawDataset,
+  name: "category",
+  description: "カテゴリ",
+  columns: {
+    category_id: "カテゴリID",
+    name: "カテゴリ名",
+    last_update: "最終更新日時",
+  }
+}

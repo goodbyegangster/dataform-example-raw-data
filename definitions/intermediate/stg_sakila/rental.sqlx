@@ -1,0 +1,27 @@
+config {
+  type: "view",
+  database: dataform.projectConfig.defaultDatabase,
+  schema: dataform.projectConfig.vars.stagingDataset,
+  name: "rental",
+  description: "レンタル",
+  columns: {
+    rental_id: "レンタルID",
+    rental_date: "レンタル日時",
+    inventory_id: "在庫ID",
+    customer_id: "顧客ID",
+    return_date: "返却日時",
+    staff_id: "スタッフID",
+    last_update: "最終更新日時",
+  }
+}
+
+-- raw の列を選択し、staging ビューとして公開する。
+SELECT
+  rental_id,
+  rental_date,
+  inventory_id,
+  customer_id,
+  return_date,
+  staff_id,
+  last_update
+FROM ${ref(dataform.projectConfig.vars.rawDataset, "rental")}

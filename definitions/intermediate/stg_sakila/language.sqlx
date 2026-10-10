@@ -1,0 +1,19 @@
+config {
+  type: "view",
+  database: dataform.projectConfig.defaultDatabase,
+  schema: dataform.projectConfig.vars.stagingDataset,
+  name: "language",
+  description: "言語",
+  columns: {
+    language_id: "言語ID",
+    name: "言語名",
+    last_update: "最終更新日時",
+  }
+}
+
+-- raw の列を選択し、staging ビューとして公開する。
+SELECT
+  language_id,
+  name,
+  last_update
+FROM ${ref(dataform.projectConfig.vars.rawDataset, "language")}

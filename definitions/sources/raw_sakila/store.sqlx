@@ -1,0 +1,13 @@
+config {
+  type: "declaration",
+  database: dataform.projectConfig.defaultDatabase,
+  schema: dataform.projectConfig.vars.rawDataset,
+  name: "store",
+  description: "店舗",
+  columns: {
+    store_id: "店舗ID",
+    manager_staff_id: "店長のスタッフID",
+    address_id: "住所ID",
+    last_update: "最終更新日時",
+  }
+}

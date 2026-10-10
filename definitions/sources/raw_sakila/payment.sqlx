@@ -1,0 +1,16 @@
+config {
+  type: "declaration",
+  database: dataform.projectConfig.defaultDatabase,
+  schema: dataform.projectConfig.vars.rawDataset,
+  name: "payment",
+  description: "支払い",
+  columns: {
+    payment_id: "支払いID",
+    customer_id: "顧客ID",
+    staff_id: "スタッフID",
+    rental_id: "レンタルID",
+    amount: "支払金額",
+    payment_date: "支払日時",
+    last_update: "最終更新日時",
+  }
+}

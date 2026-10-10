@@ -1,0 +1,13 @@
+config {
+  type: "declaration",
+  database: dataform.projectConfig.defaultDatabase,
+  schema: dataform.projectConfig.vars.rawDataset,
+  name: "inventory",
+  description: "在庫",
+  columns: {
+    inventory_id: "在庫ID",
+    film_id: "映画ID",
+    store_id: "店舗ID",
+    last_update: "最終更新日時",
+  }
+}

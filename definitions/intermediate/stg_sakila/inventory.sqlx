@@ -1,0 +1,21 @@
+config {
+  type: "view",
+  database: dataform.projectConfig.defaultDatabase,
+  schema: dataform.projectConfig.vars.stagingDataset,
+  name: "inventory",
+  description: "在庫",
+  columns: {
+    inventory_id: "在庫ID",
+    film_id: "映画ID",
+    store_id: "店舗ID",
+    last_update: "最終更新日時",
+  }
+}
+
+-- raw の列を選択し、staging ビューとして公開する。
+SELECT
+  inventory_id,
+  film_id,
+  store_id,
+  last_update
+FROM ${ref(dataform.projectConfig.vars.rawDataset, "inventory")}
