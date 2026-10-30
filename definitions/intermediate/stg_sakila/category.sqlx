@@ -1,0 +1,25 @@
+config {
+  type: "view",
+  tags: ["staging", "sakila"],
+  database: dataform.projectConfig.defaultDatabase,
+  schema: dataform.projectConfig.vars.stagingDataset,
+  name: "category",
+  description: "カテゴリ",
+  columns: {
+    category_id: "カテゴリID",
+    name: "カテゴリ名",
+    last_update: "最終更新日時",
+  },
+  assertions: {
+    uniqueKey: ["category_id"],
+    nonNull: ["category_id"],
+  },
+}
+
+  -- raw の列を選択し、staging ビューとして公開する。
+SELECT
+  category_id,
+  name,
+  last_update
+FROM
+  ${ref(dataform.projectConfig.vars.rawDataset, "category")}

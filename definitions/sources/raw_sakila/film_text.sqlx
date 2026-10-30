@@ -1,0 +1,12 @@
+config {
+  type: "declaration",
+  database: dataform.projectConfig.defaultDatabase,
+  schema: dataform.projectConfig.vars.rawDataset,
+  name: "film_text",
+  description: "映画のタイトルと説明",
+  columns: {
+    film_id: "映画ID",
+    title: "タイトル",
+    description: "説明",
+  }
+}

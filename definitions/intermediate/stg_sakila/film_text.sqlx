@@ -1,0 +1,25 @@
+config {
+  type: "view",
+  tags: ["staging", "sakila"],
+  database: dataform.projectConfig.defaultDatabase,
+  schema: dataform.projectConfig.vars.stagingDataset,
+  name: "film_text",
+  description: "映画のタイトルと説明",
+  columns: {
+    film_id: "映画ID",
+    title: "タイトル",
+    description: "説明",
+  },
+  assertions: {
+    uniqueKey: ["film_id"],
+    nonNull: ["film_id"],
+  },
+}
+
+  -- raw の列を選択し、staging ビューとして公開する。
+SELECT
+  film_id,
+  title,
+  description
+FROM
+  ${ref(dataform.projectConfig.vars.rawDataset, "film_text")}

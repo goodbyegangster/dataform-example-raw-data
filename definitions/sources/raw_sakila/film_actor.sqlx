@@ -1,0 +1,12 @@
+config {
+  type: "declaration",
+  database: dataform.projectConfig.defaultDatabase,
+  schema: dataform.projectConfig.vars.rawDataset,
+  name: "film_actor",
+  description: "映画出演者",
+  columns: {
+    actor_id: "出演者ID",
+    film_id: "映画ID",
+    last_update: "最終更新日時",
+  }
+}

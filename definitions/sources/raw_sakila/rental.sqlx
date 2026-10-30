@@ -1,0 +1,16 @@
+config {
+  type: "declaration",
+  database: dataform.projectConfig.defaultDatabase,
+  schema: dataform.projectConfig.vars.rawDataset,
+  name: "rental",
+  description: "レンタル",
+  columns: {
+    rental_id: "レンタルID",
+    rental_date: "レンタル日時",
+    inventory_id: "在庫ID",
+    customer_id: "顧客ID",
+    return_date: "返却日時",
+    staff_id: "スタッフID",
+    last_update: "最終更新日時",
+  }
+}

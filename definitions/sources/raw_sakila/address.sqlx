@@ -1,0 +1,17 @@
+config {
+  type: "declaration",
+  database: dataform.projectConfig.defaultDatabase,
+  schema: dataform.projectConfig.vars.rawDataset,
+  name: "address",
+  description: "住所",
+  columns: {
+    address_id: "住所ID",
+    address: "住所",
+    address2: "住所の補足",
+    district: "地域",
+    city_id: "都市ID",
+    postal_code: "郵便番号",
+    phone: "電話番号",
+    last_update: "最終更新日時",
+  }
+}

@@ -1,0 +1,45 @@
+config {
+  type: "view",
+  tags: ["staging", "sakila"],
+  database: dataform.projectConfig.defaultDatabase,
+  schema: dataform.projectConfig.vars.stagingDataset,
+  name: "film",
+  description: "映画",
+  columns: {
+    film_id: "映画ID",
+    title: "タイトル",
+    description: "説明",
+    release_year: "公開年",
+    language_id: "言語ID",
+    original_language_id: "オリジナル言語ID",
+    rental_duration: "レンタル期間（日数）",
+    rental_rate: "レンタル料金",
+    length: "上映時間（分）",
+    replacement_cost: "弁償金額",
+    rating: "レーティング",
+    special_features: "特典映像",
+    last_update: "最終更新日時",
+  },
+  assertions: {
+    uniqueKey: ["film_id"],
+    nonNull: ["film_id"],
+  },
+}
+
+  -- raw の列を選択し、staging ビューとして公開する。
+SELECT
+  film_id,
+  title,
+  description,
+  release_year,
+  language_id,
+  original_language_id,
+  rental_duration,
+  rental_rate,
+  length,
+  replacement_cost,
+  rating,
+  special_features,
+  last_update
+FROM
+  ${ref(dataform.projectConfig.vars.rawDataset, "film")}

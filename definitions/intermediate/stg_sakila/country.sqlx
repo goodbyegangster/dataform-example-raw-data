@@ -1,0 +1,25 @@
+config {
+  type: "view",
+  tags: ["staging", "sakila"],
+  database: dataform.projectConfig.defaultDatabase,
+  schema: dataform.projectConfig.vars.stagingDataset,
+  name: "country",
+  description: "国",
+  columns: {
+    country_id: "国ID",
+    country: "国名",
+    last_update: "最終更新日時",
+  },
+  assertions: {
+    uniqueKey: ["country_id"],
+    nonNull: ["country_id"],
+  },
+}
+
+  -- raw の列を選択し、staging ビューとして公開する。
+SELECT
+  country_id,
+  country,
+  last_update
+FROM
+  ${ref(dataform.projectConfig.vars.rawDataset, "country")}

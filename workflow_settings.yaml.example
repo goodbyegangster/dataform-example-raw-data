@@ -1,0 +1,9 @@
+dataformCoreVersion: 3.0.71
+defaultProject: hogehoge
+defaultLocation: hogehoge
+defaultDataset: default_dataset
+defaultAssertionDataset: dataform_assertions_sample_dev
+vars:
+  environment: hogehoge
+  rawDataset: hogehoge
+  stagingDataset: hogehoge

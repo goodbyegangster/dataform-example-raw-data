@@ -1,0 +1,13 @@
+config {
+  type: "declaration",
+  database: dataform.projectConfig.defaultDatabase,
+  schema: dataform.projectConfig.vars.rawDataset,
+  name: "city",
+  description: "都市",
+  columns: {
+    city_id: "都市ID",
+    city: "都市名",
+    country_id: "国ID",
+    last_update: "最終更新日時",
+  }
+}
